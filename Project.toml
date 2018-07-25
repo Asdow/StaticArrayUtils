@@ -1,0 +1,7 @@
+authors = ["korphe "]
+name = "StaticArrayUtils"
+uuid = "efc909a0-8fe6-11e8-0c75-6984a2bbfd9a"
+version = "0.1.0"
+
+[deps]
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
