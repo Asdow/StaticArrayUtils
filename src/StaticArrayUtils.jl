@@ -62,6 +62,28 @@ SMat33(T=Float64) = SMat{3,3,T,9}(
     zero(T), zero(T), one(T)
 )
 
+@inline function SMat33(
+    R11::T, R21::T, R31::T,
+    R12::T, R22::T, R32::T,
+    R13::T, R23::T, R33::T
+) where {T}
+
+    matrix = SMat{3,3,T,9}(
+        R11, R21, R31,
+        R12, R22, R32,
+        R13, R23, R33
+    )
+    return matrix
+end
+
+@inline function SMat33(v1, v2, v3)
+    SMat33(
+        v1[1], v1[2], v1[3],
+        v2[1], v2[2], v2[3],
+        v3[1], v3[2], v3[3]
+    )
+end
+
 
 SMat44(T=Float64) = SMat{4,4,T,16}(
     one(T), zero(T), zero(T), zero(T),
